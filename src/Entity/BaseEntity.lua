@@ -10,5 +10,17 @@ function BaseEntity:new(x,y)
     return self
 end
 
+
+function BaseEntity:draw()
+    --print("Base Entity Draw() called" .. self.x .. " " .. self.y)
+    love.graphics.rectangle(
+        self.renderMode,
+        self.x,
+        self.y,
+        self.width,
+        self.height
+    )
+end
+
 return BaseEntity
 
