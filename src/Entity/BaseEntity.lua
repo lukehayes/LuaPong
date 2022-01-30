@@ -6,7 +6,7 @@ function BaseEntity:new(x,y)
     self.y = y
     self.width = 10
     self.height = 10
-    self.speed = 2
+    self.speed = 5
     self.xDir = 1
     self.yDir = -1
     self.renderMode = "fill"
@@ -25,6 +25,24 @@ function BaseEntity:draw()
 end
 
 function BaseEntity:update(dt)
+
+    --Check if ball hits edge of screen
+    if self.x > 780 then
+        self.xDir = self.xDir - 1
+    end
+
+    if self.x < 0 then
+        self.xDir = self.xDir + 1
+    end
+
+    if self.y > 580 then
+        self.xDir = self.xDir - 1
+    end
+
+    if self.y < 0 then
+        self.yDir = self.yDir + 1
+    end
+
     self.x = self.x + self.xDir * self.speed
     self.y = self.y + self.xDir * self.speed
 end
