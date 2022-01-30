@@ -1,5 +1,5 @@
 --Simple renderer to batch drawing - eventually.
---BaseEntity = require "src/Entity/BaseEntity"
+BaseEntity = require "src/Entity/BaseEntity"
 
 local Renderer = {}
 
