@@ -11,6 +11,7 @@ function Renderer:new()
 end
 
 function Renderer:add(entity)
+    assert(entity, "ENTITY WAS NIL")
     table.insert(self.entities, entity)
     self.size = self.size + 1
     --print(self.size)
