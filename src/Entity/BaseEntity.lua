@@ -6,15 +6,15 @@ function BaseEntity:new(x,y)
     self.y = y
     self.width = 10
     self.height = 10
-    self.speed = 10
+    self.speed = 2
+    self.xDir = 1
+    self.yDir = -1
     self.renderMode = "fill"
-    print("Consturctor Called")
     return self
 end
 
 
 function BaseEntity:draw()
-    print("Base Entity Draw() called")
     love.graphics.rectangle(
         self.renderMode,
         self.x,
@@ -22,6 +22,11 @@ function BaseEntity:draw()
         self.width,
         self.height
     )
+end
+
+function BaseEntity:update(dt)
+    self.x = self.x + self.xDir * self.speed
+    self.y = self.y + self.xDir * self.speed
 end
 
 return BaseEntity
