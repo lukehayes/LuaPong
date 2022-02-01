@@ -1,7 +1,9 @@
 --Base class for all on-screen entities.
 local BaseEntity = {}
+BaseEntity.__index = BaseEntity
 
-function BaseEntity:new(x,y)
+function BaseEntity.new(x,y)
+    local self = setmetatable({}, BaseEntity)
     self.x = x
     self.y = y
     self.width = 10
@@ -18,7 +20,7 @@ end
 
 function BaseEntity:draw()
     love.graphics.rectangle(
-        self.renderMode,
+        "fill",
         self.x,
         self.y,
         self.width,

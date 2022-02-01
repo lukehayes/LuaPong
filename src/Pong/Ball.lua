@@ -1,9 +1,10 @@
 --Base class for all on-screen entities.
 local BaseEntity = require "src/Entity/BaseEntity"
-local Ball = {}
+Ball = {}
+Ball.__index = Ball
 
-function Ball:new(x,y)
-    setmetatable(self, {__index=BaseEntity:new(x,y)})
+function Ball.new(x,y)
+    local self = setmetatable({}, BaseEntity)
     return self
 end
 
