@@ -30,7 +30,7 @@ end
 function BaseEntity:update(dt)
 
     --Check if ball hits edge of screen
-    if self.x > 780 then
+    if self.x > 790 then
         self.xDir = self.xDir - 1
         self.xAngle = love.math.random()
     end
@@ -40,7 +40,7 @@ function BaseEntity:update(dt)
         self.xAngle = love.math.random()
     end
 
-    if self.y > 580 then
+    if self.y > 590 then
         self.yDir = self.yDir - 1
         self.yAngle = love.math.random()
     end
