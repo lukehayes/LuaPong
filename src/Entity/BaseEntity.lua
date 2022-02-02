@@ -1,8 +1,14 @@
-Object = require "src/Libs/classic"
+---
+--  @module Entity
 
---Base class for all on-screen entities.
+---
+--  @type BaseEntity
+local Object = require "src/Libs/classic"
 BaseEntity = Object:extend()
 
+--- BaseEntity Constructor.
+--  @param x    The X position.
+--  @param y    The Y position.
 function BaseEntity:new(x,y)
     self.x = x or 0
     self.y = y or 0
@@ -16,7 +22,7 @@ function BaseEntity:new(x,y)
     self.renderMode = "fill"
 end
 
-
+--- Draw the entity.
 function BaseEntity:draw()
     love.graphics.rectangle(
         self.renderMode,
@@ -27,6 +33,8 @@ function BaseEntity:draw()
     )
 end
 
+--- Draw the entity.
+--  @param dt    Delta time
 function BaseEntity:update(dt)
 
     --Check if ball hits edge of screen
