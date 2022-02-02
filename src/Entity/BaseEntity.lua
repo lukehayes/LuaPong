@@ -1,10 +1,10 @@
+Object = require "src/Libs/classic"
+
 --Base class for all on-screen entities.
-local BaseEntity = {}
-BaseEntity.__index = BaseEntity
+local BaseEntity = Object.extend()
 
 function BaseEntity.new(x,y)
-    local self = setmetatable({}, BaseEntity)
-    self.x = x
+    self.x = x 
     self.y = y
     self.width = 10
     self.height = 10
@@ -14,7 +14,6 @@ function BaseEntity.new(x,y)
     self.xAngle = 0
     self.yAngle = 0
     self.renderMode = "fill"
-    return self
 end
 
 

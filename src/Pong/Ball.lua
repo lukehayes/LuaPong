@@ -1,11 +1,11 @@
+Object = require "src/Libs/classic"
+
 --Base class for all on-screen entities.
 local BaseEntity = require "src/Entity/BaseEntity"
-Ball = {}
-Ball.__index = Ball
+
+Ball = BaseEntity.extend().
 
 function Ball.new(x,y)
-    local self = setmetatable({}, BaseEntity)
-    return self
 end
 
 function Ball:draw()
