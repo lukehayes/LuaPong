@@ -8,7 +8,7 @@ function BaseEntity:new(x,y)
     self.y = y or 0
     self.width = 10
     self.height = 10
-    self.speed = 50
+    self.speed = 150
     self.xDir = 1
     self.yDir = -1
     self.xAngle = 0
