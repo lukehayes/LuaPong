@@ -1,11 +1,11 @@
 Object = require "src/Libs/classic"
 
 --Base class for all on-screen entities.
-local BaseEntity = Object.extend()
+BaseEntity = Object:extend()
 
-function BaseEntity.new(x,y)
-    self.x = x 
-    self.y = y
+function BaseEntity:new(x,y)
+    self.x = x or 0
+    self.y = y or 0
     self.width = 10
     self.height = 10
     self.speed = 50
@@ -19,7 +19,7 @@ end
 
 function BaseEntity:draw()
     love.graphics.rectangle(
-        "fill",
+        self.renderMode,
         self.x,
         self.y,
         self.width,

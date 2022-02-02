@@ -1,11 +1,10 @@
-Object = require "src/Libs/classic"
-
---Base class for all on-screen entities.
+local Object = require "src/Libs/classic"
 local BaseEntity = require "src/Entity/BaseEntity"
 
-Ball = BaseEntity.extend().
+local Ball = BaseEntity:extend()
 
-function Ball.new(x,y)
+function Ball:new(x,y)
+    Ball.super.new(self,x,y)
 end
 
 function Ball:draw()
